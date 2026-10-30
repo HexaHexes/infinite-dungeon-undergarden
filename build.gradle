@@ -96,9 +96,27 @@ tasks.withType(JavaCompile).configureEach {
 // run, so this configuration must stay wired in every derived repo.
 repositories {
     mavenCentral()
+    // Third-party integration coordinate: the target mod for this dungeon
+    // dimension - dev classpath only, never packaged.
+    maven {
+        name = 'CurseMaven'
+        url = uri('https://cursemaven.com')
+    }
 }
 
+// A dev-runs-only dependency bucket: the runs resolve
+// configurations.runtimeClasspath, so extending it from this bucket puts the
+// target mod on every dev run (and the gametest server, which folds in this
+// configuration) while runtimeElements - and therefore the published POM -
+// stays free of optional mods consumers never need transitively.
+configurations {
+    devRuntime
+}
+
+configurations.runtimeClasspath.extendsFrom(configurations.devRuntime)
+
 dependencies {
+    devRuntime 'curse.maven:the-undergarden-379849:7862546'
     testImplementation platform('org.junit:junit-bom:5.10.2')
     testImplementation 'org.junit.jupiter:junit-jupiter'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
@@ -170,7 +188,7 @@ publishing {
     repositories {
         maven {
             name = 'GitHubPackages'
-            url = uri('https://maven.pkg.github.com/HexaHexes/neoforge-mod-template')
+            url = uri('https://maven.pkg.github.com/HexaHexes/infinite-dungeon-undergarden')
             credentials {
                 username = System.getenv('GITHUB_ACTOR') ?: project.findProperty('gpr.user')
                 password = System.getenv('GITHUB_TOKEN') ?: project.findProperty('gpr.key')

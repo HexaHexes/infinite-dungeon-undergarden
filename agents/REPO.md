@@ -18,7 +18,8 @@ with its own salt, and the ported content pack (types, biome mappings, staged lo
 treasure, theming).
 
 **Dependencies**
-- Required today: Minecraft, NeoForge (scaffold state).
+- Required: Minecraft, NeoForge, **The Undergarden** `undergarden [0.9.6,)` (org ruling: target mod is a hard dependency; CF project 379849, file 7862546 = The_Undergarden-1.21.1-0.9.6, no transitive hard deps).
+- Dev classpath: `curse.maven:the-undergarden-379849:7862546` through the devRuntime bucket in build.gradle - never packaged, POM-clean.
 - Planned for first implementation: `infinite-dungeon-api` (dimension profiles),
   Dungeon Crawl (content contract, CF 324973 file 7887320 / Modrinth q0rRg4lH),
   and the profile-driven core of HexaHexes/infinite-dungeon (issues #162, #163).

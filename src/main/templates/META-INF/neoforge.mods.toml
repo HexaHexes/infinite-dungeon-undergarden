@@ -39,3 +39,11 @@ side = "BOTH"
 # Add your mod's dependencies below. Use type = "optional" for anything the mod
 # works without, and gate the code that touches it (mixins, registrations) so it
 # no-ops when the dependency is absent.
+
+[[dependencies.${mod_id}]]
+modId = "undergarden"
+type = "required"
+versionRange = "[0.9.6,)"
+ordering = "AFTER"
+side = "BOTH"
+reason = "This dungeon dimension is the Undergarden blueprint: its biome gate and themed palette are the Undergarden mod's own."
