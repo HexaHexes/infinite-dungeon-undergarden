@@ -7,8 +7,8 @@ and pulled in verbatim - **never hand-edit it.** Everything in this file is this
 repo's own and is edited freely; keep it aligned with the org rules rather than
 restating them.
 
-**Repo:** `HexaHexes/infinite-dungeon-undergarden` - **Mod ID:** `infinite_dungeon_undergarden` - **Branch:** `main`
-**Platform:** Minecraft 1.21.1 / NeoForge 21.1.259 / JDK 21 - **Jar:** `build/libs/infinite_dungeon_undergarden-<version>.jar`
+**Repo:** `HexaHexes/infinite-dungeon-undergarden` · **Mod ID:** `infinite_dungeon_undergarden` · **Branch:** `neoforge-1.21.1` (the loader line; this is the default branch - no `main`)
+**Platform:** Minecraft 1.21.1 / NeoForge 21.1.259 / JDK 21 · **Jar:** `build/libs/infinite_dungeon_undergarden-neoforge-1.21.1-<version>.jar`
 
 Adds the Undergarden dimension - one of the seven sibling dimension addons ported from the
 Dungeon Crawl - Dimensional Patch datapacks (project 1189484): this addon ships one
